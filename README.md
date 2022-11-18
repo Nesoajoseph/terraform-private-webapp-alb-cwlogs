@@ -4,16 +4,16 @@
 
 ## Deployment steps 
 
-### clone the repo with command `git clone https://github.com/cvamsikrishna11/private-ec2-with-public-elb.git`
+Clone the repo with command `git clone https://github.com/cvamsikrishna11/private-ec2-with-public-elb.git`
 
-### Change directory into `cd private-ec2-with-public-elb`
+Change directory into `cd private-ec2-with-public-elb`
 
-### Replace the profile name in the provider.tf
+Replace the profile name in the provider.tf
 
-### Initialize the project `terraform init`
+Initialize the project `terraform init`
 
-### Plan the project `terraform plan`
+Plan the project `terraform plan`
 
-### Deploy the infra code with `terraform apply` enter yes, when prompts for approval
+Deploy the infra code with `terraform apply` enter yes, when prompts for approval
 
-### To destroy `terraform destroy` enter yes, when prompts for approval
+Note: To destroy `terraform destroy` enter yes, when prompts for approval
