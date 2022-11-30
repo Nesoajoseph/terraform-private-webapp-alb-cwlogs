@@ -23,6 +23,11 @@ variable "tags" {
   description = "tags for the vpc module"
 }
 
+variable "iam_role_name" {
+  type        = string
+  description = "iam role name to attach to the instance profile"
+}
+
 resource "aws_security_group" "ec2_sg" {
   name        = join("", [var.name, "-", "ec2-sg"])
   description = "Allow  traffic for http and ssh"
@@ -51,6 +56,11 @@ resource "aws_security_group" "ec2_sg" {
   }
 }
 
+resource "aws_iam_instance_profile" "instance_profile" {
+  name = join("", [var.name, "-", "iam-instance-profile"])
+  role = var.iam_role_name
+}
+
 
 
 resource "aws_instance" "web_server" {
@@ -60,5 +70,7 @@ resource "aws_instance" "web_server" {
   subnet_id              = var.subnet_id
   vpc_security_group_ids = [aws_security_group.ec2_sg.id]
   user_data              = file("scripts/userdata.sh")
+  iam_instance_profile   = aws_iam_instance_profile.instance_profile.name
   tags                   = merge(var.tags, { Name = join("", [var.name, "-", "webserver"]) })
+
 }
