@@ -1,7 +1,7 @@
 # Terraform infrastructure code to create the VPC with public & private subnets with NAT's, Route tables, IAM Roles, CloudWatch Agent
-### Will create EC2 instance, in the private subnet
-### Attach load balancer to the EC2 instance for the access in the private subnet instances
-### Sends EC2 access logs to the CloudWatch log group, by automatically installing the CloudWatch Agent on the EC2, as part of user data.
+- Will create EC2 instance, in the private subnet
+- Attach load balancer to the EC2 instance for the access in the private subnet instances
+- Sends EC2 access logs to the CloudWatch log group, by automatically installing the CloudWatch Agent on the EC2, as part of user data.
 
 ## Deployment steps 
 
