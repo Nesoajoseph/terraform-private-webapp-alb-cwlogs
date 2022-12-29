@@ -3,7 +3,12 @@ variable "name" {
   description = "name tag value"
 }
 
-variable "vpc_id" {
+###variable "vpc_id" {
+  type        = string
+  description = "vpc id to launch SG"
+}
+
+###variable "vpc_id" {
   type        = string
   description = "vpc id to launch SG"
 }
